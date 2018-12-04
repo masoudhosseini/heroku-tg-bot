@@ -6,9 +6,9 @@ const trigger2 = 'masoud';
 const trigger3 = 'location';
 
 bot.on('message', (msg) => {
-    bot.sendMessage(msg.chat.id, 'Hi, do you want to travel?', {
+    bot.sendMessage(msg.chat.id, '', {
         reply_markup: {
-            keyboard: [[trigger], [trigger2]]
+            keyboard: [[trigger], [trigger2], [trigger3]]
         }
     });
 });
