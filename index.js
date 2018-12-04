@@ -19,5 +19,8 @@ bot.on('message', (msg) => {
 
         }
     });
-msg.payload = {chatId : masoudhosseini68, type : 'message', content : 'ping'}
-return msg;
+bot.on('message', (msg) => {
+    if (msg.text.toString() === trigger) {
+        bot.sendPhoto(msg.chat.id,photo="http://pilatesandyogafitness.com/wp-content/uploads/2018/01/Heart-clip-art-clipartandscrap.png")
+    }
+});
