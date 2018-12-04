@@ -20,7 +20,7 @@ bot.on('message', (msg) => {
         }
     });
 bot.on('message', (msg) => {
-    if (msg.text.toString() === trigger) {
+    if (msg.text.toString() === trigger2) {
         bot.sendPhoto(msg.chat.id,photo="http://pilatesandyogafitness.com/wp-content/uploads/2018/01/Heart-clip-art-clipartandscrap.png");
     }
 });
