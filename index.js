@@ -8,7 +8,7 @@ const trigger3 = 'location';
 bot.on('message', (msg) => {
     bot.sendMessage(msg.chat.id,  {
         reply_markup: {
-            keyboard: [['kobra'], ['masoud'], ['location']]
+            keyboard: [['kobra'], ['masoud']]
         }
     });
 });
