@@ -5,7 +5,6 @@ const trigger = 'kobra';
 const trigger2 = 'masoud';
 const trigger3 = 'location';
 
-
 bot.on('message', (msg) => {
     bot.sendMessage(msg.chat.id,  {
         reply_markup: {
