@@ -5,12 +5,14 @@ const trigger = 'kobra';
 const trigger2 = 'masoud';
 const trigger3 = 'location';
 
-bot.on('message', (msg) => {
-    bot.sendMessage(msg.chat.id, '', {
-        reply_markup: {
-            keyboard: [[trigger], 'location', [trigger2]]
+bot.onText(/\/start/, (msg) => {
+
+    bot.sendMessage(msg.chat.id, "Welcome", {
+        "reply_markup": {
+            "keyboard": [["Sample text", "Second sample"],   ["Keyboard"], ["I'm robot"]]
         }
     });
+
 });
 
 
