@@ -8,7 +8,7 @@ const trigger3 = 'location';
 bot.on('message', (msg) => {
     bot.sendMessage(msg.chat.id, 'Hi, do you want to travel?', {
         reply_markup: {
-            keyboard: [[trigger], ['Bulk option']]
+            keyboard: [[trigger], [trigger2]]
         }
     });
 });
