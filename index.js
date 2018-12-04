@@ -5,7 +5,7 @@ const trigger = 'kobra';
 
 
 bot.on('message', (msg) => {
-    bot.sendMessage(msg.chat.id, 'Hi, do you want to travel?', {
+    bot.sendMessage(msg.chat.id, , {
         reply_markup: {
             keyboard: [['kobra'], ['masoud']]
         }
