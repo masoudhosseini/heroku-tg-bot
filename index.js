@@ -2,8 +2,10 @@ const Telegrambot = require('node-telegram-bot-api')
 const TOKEN = '658527596:AAEkA5Vkbq_RFQgxOMz4PlffltVfuu9wGuQ'
 const bot = new Telegrambot(TOKEN,{polling:true})
 const trigger = 'دما'
-const trigger2 = 'masoud'
+const trigger2 = 'فشار هوا'
 const trigger3 = 'location'
+const trigger4 = 'رطوبت'
+
 var express = require('express');
 var port = process.env.PORT || 3000;
 var app = express();
@@ -20,7 +22,7 @@ bot.onText(/\/start/, (msg) => {
 
     bot.sendMessage(msg.chat.id, "Welcome", {
         "reply_markup": {
-            "keyboard": [["masoud", "Second sample"],   ["دما"], ["location"]]
+            "keyboard": [["فشار هوا", "رطوبت"],   ["دما"], ["location"]]
         }
     });
 
@@ -34,7 +36,7 @@ bot.on('message', (msg) => {
                 console.log('error:', error);
             } else {
                 let weather = JSON.parse(body)
-                let message = `درجه سلسیوس است ${weather.main.temp}  ارومیه`;
+                let message = `درجه سلسیوس ${weather.main.temp}   `;
 
                 bot.sendMessage(msg.chat.id, message);
             }
@@ -43,8 +45,29 @@ bot.on('message', (msg) => {
     });
 bot.on('message', (msg) => {
     if (msg.text.toString() === trigger2) {
-        bot.sendPhoto(msg.chat.id,photo="http://pilatesandyogafitness.com/wp-content/uploads/2018/01/Heart-clip-art-clipartandscrap.png");
-    }
+        request(url, function (err, response, body) {
+            if(err){
+                console.log('error:', error);
+            } else {
+                let weather = JSON.parse(body)
+                let message = `اچ پی آ ${weather.main.pressure}   `;
+
+                bot.sendMessage(msg.chat.id, message);
+            }
+        });    }
+});
+bot.on('message', (msg) => {
+    if (msg.text.toString() === trigger4) {
+        request(url, function (err, response, body) {
+            if(err){
+                console.log('error:', error);
+            } else {
+                let weather = JSON.parse(body)
+                let message = `درصد رطوبت ${weather.main.humidity}   `;
+
+                bot.sendMessage(msg.chat.id, message);
+            }
+        });    }
 });
 bot.on('message', (msg) => {
     if (msg.text.toString() === trigger3) {
