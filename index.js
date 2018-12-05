@@ -1,10 +1,13 @@
 const Telegrambot = require('node-telegram-bot-api')
 const TOKEN = '658527596:AAEkA5Vkbq_RFQgxOMz4PlffltVfuu9wGuQ'
 const bot = new Telegrambot(TOKEN,{polling:true})
+const port = process.env.PORT || 3000;
 const trigger = 'kobra'
 const trigger2 = 'masoud'
 const trigger3 = 'location'
-
+app.listen(port, function(){
+    console.log("Express server is running on port " + port)
+})
 bot.onText(/\/start/, (msg) => {
 
     bot.sendMessage(msg.chat.id, "Welcome", {
