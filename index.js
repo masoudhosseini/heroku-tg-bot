@@ -35,7 +35,7 @@ bot.on('message', (msg) => {
                 console.log('error:', error);
             } else {
                 let weather = JSON.parse(body)
-                bot.sendMessage(msg.chat.id, `It's ${weather.main.temp} degrees in ${weather.name}!');
+                bot.sendMessage(msg.chat.id, 'It ${weather.main.temp} degrees in ${weather.name}!');
             }
         });
         }
