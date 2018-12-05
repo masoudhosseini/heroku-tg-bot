@@ -4,7 +4,6 @@ const bot = new Telegrambot(TOKEN,{polling:true})
 const trigger = 'kobra'
 const trigger2 = 'masoud'
 const trigger3 = 'location'
-var port = process.env.PORT || 8000;
 const express = require('express'),
     cors = require('cors'),
     app = express(),
