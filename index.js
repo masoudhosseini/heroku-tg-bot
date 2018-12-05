@@ -1,15 +1,15 @@
-const Telegrambot = require('node-telegram-bot-api');
-const TOKEN = '658527596:AAEkA5Vkbq_RFQgxOMz4PlffltVfuu9wGuQ';
-const bot = new Telegrambot(TOKEN,{polling:true});
-const trigger = 'kobra';
-const trigger2 = 'masoud';
-const trigger3 = 'location';
+const Telegrambot = require('node-telegram-bot-api')
+const TOKEN = '658527596:AAEkA5Vkbq_RFQgxOMz4PlffltVfuu9wGuQ'
+const bot = new Telegrambot(TOKEN,{polling:true})
+const trigger = 'kobra'
+const trigger2 = 'masoud'
+const trigger3 = 'location'
 
 bot.onText(/\/start/, (msg) => {
 
     bot.sendMessage(msg.chat.id, "Welcome", {
         "reply_markup": {
-            "keyboard": [["Sample text", "Second sample"],   ["Keyboard"], ["location"]]
+            "keyboard": [["masoud", "Second sample"],   ["kobra"], ["location"]]
         }
     });
 
