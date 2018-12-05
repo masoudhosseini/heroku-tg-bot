@@ -4,14 +4,11 @@ const bot = new Telegrambot(TOKEN,{polling:true})
 const trigger = 'kobra'
 const trigger2 = 'masoud'
 const trigger3 = 'location'
-const express = require('express');
-const path = require('path');
-const app = express();
-app.use(express.static(__dirname + '/dist/'));
-app.use('/src/assets', express.static(__dirname + '/src/assets/'));
+var port = process.env.PORT || 8000;
+server.listen(port, function() {
+    console.log("App is running on port " + port);
+});
 
-
-app.listen(process.env.PORT || 8080);
 bot.onText(/\/start/, (msg) => {
 
     bot.sendMessage(msg.chat.id, "Welcome", {
