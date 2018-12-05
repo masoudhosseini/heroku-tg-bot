@@ -7,6 +7,9 @@ const trigger3 = 'location'
 var express = require('express');
 var port = process.env.PORT || 3000;
 var app = express();
+let request = require('request');
+let apiKey = '6ee20a29bb9dd0705999f0d8529b3224';
+let url = 'http://api.openweathermap.org/data/2.5/weather?q=Orumiyeh,ir&APPID=6ee20a29bb9dd0705999f0d8529b3224'
 app.get('/', function (req, res) {
 res.send(JSON.stringify({ Hello: 'World'}));
 });
@@ -27,7 +30,15 @@ bot.onText(/\/start/, (msg) => {
 bot.on('message', (msg) => {
     if (msg.text.toString() === trigger) {
          bot.sendMessage(msg.chat.id, 'Hello from masoud');
-
+        request(url, function (err, response, body) {
+            if(err){
+                console.log('error:', error);
+            } else {
+                let weather = JSON.parse(body)
+                bot.sendMessage(msg.chat.id, `It's ${weather.main.temp} degrees in ${weather.name}!'`;
+                console.log(message);
+            }
+        });
         }
     });
 bot.on('message', (msg) => {
