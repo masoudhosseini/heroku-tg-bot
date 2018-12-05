@@ -5,13 +5,13 @@ const trigger = 'kobra'
 const trigger2 = 'masoud'
 const trigger3 = 'location'
 var port = process.env.PORT || 8000;
-var express =require('express');
-var app = express();
-var http = require('http');
-var server = http.server(app);
-server.listen(port, function() {
-    console.log("App is running on port " + port);
-});
+const express = require('express'),
+    cors = require('cors'),
+    app = express(),
+    port = process.env.PORT || 3000;
+app.listen(port, function(){
+    console.log("Express server is running on port " + port)
+})
 
 bot.onText(/\/start/, (msg) => {
 
