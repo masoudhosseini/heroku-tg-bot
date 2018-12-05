@@ -4,13 +4,6 @@ const bot = new Telegrambot(TOKEN,{polling:true})
 const trigger = 'kobra'
 const trigger2 = 'masoud'
 const trigger3 = 'location'
-const express = require('express'),
-    cors = require('cors'),
-    app = express(),
-    port = process.env.PORT || 3000;
-app.listen(port, function(){
-    console.log("Express server is running on port " + port)
-})
 
 bot.onText(/\/start/, (msg) => {
 
