@@ -34,7 +34,7 @@ bot.on('message', (msg) => {
                 console.log('error:', error);
             } else {
                 let weather = JSON.parse(body)
-                let message = `It's ${weather.main.temp} degrees in ${weather.name}!`;
+                let message = `درجه سلسیوس است ${weather.main.temp}  ارومیه`;
 
                 bot.sendMessage(msg.chat.id, message);
             }
