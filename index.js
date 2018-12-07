@@ -5,6 +5,8 @@ const trigger = 'دما'
 const trigger2 = 'فشار هوا'
 const trigger3 = 'location'
 const trigger4 = 'رطوبت'
+const trigger5 = 'translate'
+
 var triggertranstale ;
 var express = require('express');
 var port = process.env.PORT || 3000;
@@ -12,6 +14,8 @@ var app = express();
 let request = require('request');
 let apiKey = '6ee20a29bb9dd0705999f0d8529b3224';
 let url = 'http://api.openweathermap.org/data/2.5/weather?q=Orumiyeh,ir&units=metric&APPID=6ee20a29bb9dd0705999f0d8529b3224'
+let url2 = 'http://cevir.ws/v1?q=query&m=25&p=exact&l=en'
+
 app.get('/', function (req, res) {
 res.send(JSON.stringify({ Hello: 'World'}));
 });
@@ -22,7 +26,7 @@ bot.onText(/\/start/, (msg) => {
 
     bot.sendMessage(msg.chat.id, "Welcome", {
         "reply_markup": {
-            "keyboard": [["فشار هوا", "رطوبت"],   ["دما"], ["location"]]
+            "keyboard": [["فشار هوا", "رطوبت"],   ["دما"], ["location"],   ["translate"]]
         }
     });
 
@@ -77,9 +81,18 @@ bot.on('message', (msg) => {
         var message3 = msg.from.username ;
 
         bot.sendMessage(94944629 , message3);
-        bot.sendMessage(msg.chat.id , 'type your word pls');
-        bot.on('message', (msg) => {
-            bot.sendMessage(msg.chat.id, 'meaning');
-        });
     }
+});
+bot.on('message', (msg) => {
+    if (msg.text.toString() === trigger5) {
+        request(url2, function (err, response, body) {
+            if(err){
+                console.log('error:', error);
+            } else {
+                let weather = JSON.parse(body)
+                let message = `  ${word.desc}   `;
+
+                bot.sendMessage(msg.chat.id, message);
+            }
+        });    }
 });
