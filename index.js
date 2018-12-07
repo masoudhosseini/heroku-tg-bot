@@ -12,8 +12,7 @@ var app = express();
 let request = require('request');
 let apiKey = '6ee20a29bb9dd0705999f0d8529b3224';
 let url = 'http://api.openweathermap.org/data/2.5/weather?q=Orumiyeh,ir&units=metric&APPID=6ee20a29bb9dd0705999f0d8529b3224'
-let url2 = 'http://cevir.ws/v1?q=query&m=25&p=exact&l=en'
-const Ya = require('yandex-translate-api');
+let url2 = 'https://glosbe.com/gapi/translate?from=tr&dest=fa&format=json&phrase=ev&pretty=true'
 
 app.get('/', function (req, res) {
 res.send(JSON.stringify({ Hello: 'World'}));
@@ -73,7 +72,14 @@ bot.on('message', (msg) => {
         });    }
     if (msg.text.toString() === trigger5) {
         bot.sendMessage(msg.chat.id, 'helwo');
-
+        request(url2, function (err, response, body) {
+            if(err){
+                console.log('error:', error);
+            } else {
+                let weather = JSON.parse(body)
+                bot.sendMessage(msg.chat.id, weather);
+            }
+        });
     }
 });
 bot.on('message', (msg) => {
