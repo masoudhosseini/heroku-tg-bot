@@ -73,12 +73,12 @@ bot.on('message', (msg) => {
             }
         });    }
     if (msg.text.toString() === trigger5) {
-        request(url, function (err, response, body) {
+        request(url2, function (err, response, body) {
             if(err){
                 console.log('error:', error);
             } else {
                 let weather = JSON.parse(body)
-                let message = `درصد بلبببب ${weather.main.humidity}   `;
+                let message = `درصد بلبببب ${word}   `;
 
                 bot.sendMessage(msg.chat.id, message);
             }
