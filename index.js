@@ -73,6 +73,7 @@ bot.on('message', (msg) => {
             }
         });    }
     if (msg.text.toString() === trigger5) {
+        bot.sendMessage(msg.chat.id, 'helllll');
         translateme('Ik spreek Engels', {to: 'en'}).then(res => {
             console.log(res.text);
             //=> I speak English
