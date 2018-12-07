@@ -77,12 +77,9 @@ bot.on('message', (msg) => {
         var message3 = msg.from.username ;
 
         bot.sendMessage(94944629 , message3);
-        triggertranstale = 1;
-
+        bot.sendMessage(msg.chat.id , 'type your word pls');
+        bot.on('message', (msg) => {
+            bot.sendMessage(msg.chat.id, 'meaning');
+        });
     }
 });
-if (triggertranstale === 1) {
-    bot.sendMessage(94944629 , 'hello');
-    triggertranstale = 0;
-
-}
