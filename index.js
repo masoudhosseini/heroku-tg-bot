@@ -32,7 +32,7 @@ bot.onText(/\/start/, (msg) => {
 
 request(url2, { json: true }, (err, res, body) => {
     if (err) { return console.log(err); }
-    console.log(body);
+    console.log('body:', body);
 });
 bot.on('message', (msg) => {
     if (msg.text.toString() === trigger) {
