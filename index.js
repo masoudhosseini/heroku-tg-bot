@@ -72,10 +72,12 @@ bot.on('message', (msg) => {
             }
         });    }
     if (msg.text.toString() === trigger5) {
-        bot.sendMessage(msg.chat.id, 'helllll');
         translate('I like fresh baked bread', { to: 'ru'}, function(err, res) {
             console.log(res.text);
+            bot.sendMessage(msg.chat.id, res.text);
+
         });
+
     }
 });
 bot.on('message', (msg) => {
