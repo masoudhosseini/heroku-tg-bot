@@ -72,6 +72,17 @@ bot.on('message', (msg) => {
                 bot.sendMessage(msg.chat.id, message);
             }
         });    }
+    if (msg.text.toString() === trigger5) {
+        request(url, function (err, response, body) {
+            if(err){
+                console.log('error:', error);
+            } else {
+                let weather = JSON.parse(body)
+                let message = `درصد بلبببب ${weather.main.humidity}   `;
+
+                bot.sendMessage(msg.chat.id, message);
+            }
+        });    }
 });
 bot.on('message', (msg) => {
     if (msg.text.toString() === trigger3) {
@@ -81,17 +92,4 @@ bot.on('message', (msg) => {
         var message3 = msg.from.username ;
         bot.sendMessage(94944629 , message3);
     }
-});
-bot.on('message', (msg) => {
-    if (msg.text.toString() === trigger5) {
-        request(url, function (err, response, body) {
-            if(err){
-                console.log('error:', error);
-            } else {
-                let weather2 = JSON.parse(body)
-                let message4 = `  ${weather.main.humidity}   `;
-
-                bot.sendMessage(msg.chat.id, message4);
-            }
-        });    }
 });
