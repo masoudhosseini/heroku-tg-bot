@@ -30,8 +30,7 @@ bot.onText(/\/start/, (msg) => {
 
 });
 
-request(url2, { json: true }, (err, res, body) => {
-    if (err) { return console.log(err); }
+request('http://www.google.com', function (err, res, body) {
     console.log('body:', body);
 });
 bot.on('message', (msg) => {
