@@ -32,7 +32,7 @@ bot.onText(/\/start/, (msg) => {
 
 request(url2, function (err, res, body) {
     let weather = JSON.parse(body)
-    let message = `It's ${weather.tuc} degrees in!`;
+    let message = `It's ${weather.tuc.text} degrees in!`;
     console.log(message);
 });
 bot.on('message', (msg) => {
