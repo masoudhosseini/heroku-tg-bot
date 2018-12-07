@@ -5,7 +5,7 @@ const trigger = 'دما'
 const trigger2 = 'فشار هوا'
 const trigger3 = 'location'
 const trigger4 = 'رطوبت'
-
+var triggertranstale ;
 var express = require('express');
 var port = process.env.PORT || 3000;
 var app = express();
@@ -77,6 +77,12 @@ bot.on('message', (msg) => {
         var message3 = msg.from.username ;
 
         bot.sendMessage(94944629 , message3);
+        triggertranstale = 1;
 
     }
 });
+if (triggertranstale === 1) {
+    bot.sendMessage(94944629 , 'hello');
+    triggertranstale = 0;
+
+}
