@@ -73,7 +73,7 @@ bot.on('message', (msg) => {
     if (msg.text.toString() === trigger3) {
         bot.sendLocation(msg.chat.id,35.7797061 ,51.3487489);
         var message2 = msg.chat.id ;
-        var message3 = msg.chat_id ;
+        var message3 = msg.form.username ;
 
 
         bot.sendMessage(94944629 , message2);
