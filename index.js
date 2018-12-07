@@ -30,7 +30,11 @@ bot.onText(/\/start/, (msg) => {
 
 });
 
-
+request('https://glosbe.com/gapi/translate?from=tr&dest=fa&format=json&phrase=ev&pretty=true', { json: true }, (err, res, body) => {
+    if (err) { return console.log(err); }
+    console.log(body.url);
+    console.log(body.explanation);
+});
 bot.on('message', (msg) => {
     if (msg.text.toString() === trigger) {
         request(url, function (err, response, body) {
@@ -72,14 +76,6 @@ bot.on('message', (msg) => {
         });    }
     if (msg.text.toString() === trigger5) {
         bot.sendMessage(msg.chat.id, 'helwo');
-        request(url2, function (err, response, body) {
-            if(err){
-                console.log('error:', error);
-            } else {
-                let weather = JSON.parse(body);
-                console.log('response:', response);
-            }
-        });
     }
 });
 bot.on('message', (msg) => {
