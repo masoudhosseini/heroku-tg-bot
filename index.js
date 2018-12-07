@@ -76,8 +76,8 @@ bot.on('message', (msg) => {
             if(err){
                 console.log('error:', error);
             } else {
-                let weather = JSON.parse(body)
-                bot.sendMessage(msg.chat.id, weather);
+                let weather = JSON.parse(body);
+                console.log('response:', response);
             }
         });
     }
