@@ -12,7 +12,7 @@ var app = express();
 let request = require('request');
 let apiKey = '6ee20a29bb9dd0705999f0d8529b3224';
 let url = 'http://api.openweathermap.org/data/2.5/weather?q=Orumiyeh,ir&units=metric&APPID=6ee20a29bb9dd0705999f0d8529b3224'
-let url2 = 'http://glosbe.com/gapi/translate?from=tr&dest=fa&format=json&phrase=ev&pretty=true'
+let url2 = 'http://glosbe.com/gapi/translate?from=tr&dest=fa&format=json&phrase=ev'
 
 app.get('/', function (req, res) {
 res.send(JSON.stringify({ Hello: 'World'}));
@@ -32,7 +32,7 @@ bot.onText(/\/start/, (msg) => {
 
 request(url2, function (err, res, body) {
     let weather = JSON.parse(body)
-    let message = `It's ${weather.from} degrees in!`;
+    let message = `It's ${weather.phrase} degrees in!`;
     console.log(message);
 });
 bot.on('message', (msg) => {
