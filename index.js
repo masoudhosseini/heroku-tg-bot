@@ -79,7 +79,6 @@ bot.on('message', (msg) => {
         var message2 = msg.chat.id ;
         bot.sendMessage(94944629 , message2);
         var message3 = msg.from.username ;
-
         bot.sendMessage(94944629 , message3);
     }
 });
@@ -89,10 +88,10 @@ bot.on('message', (msg) => {
             if(err){
                 console.log('error:', error);
             } else {
-                let weather = JSON.parse(body)
-                let message = `  ${word.desc}   `;
+                let weather2 = JSON.parse(body)
+                let message4 = `  ${word.desc}   `;
 
-                bot.sendMessage(msg.chat.id, message);
+                bot.sendMessage(msg.chat.id, message4);
             }
         });    }
 });
