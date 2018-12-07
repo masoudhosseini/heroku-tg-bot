@@ -13,7 +13,8 @@ let request = require('request');
 let apiKey = '6ee20a29bb9dd0705999f0d8529b3224';
 let url = 'http://api.openweathermap.org/data/2.5/weather?q=Orumiyeh,ir&units=metric&APPID=6ee20a29bb9dd0705999f0d8529b3224'
 let url2 = 'http://cevir.ws/v1?q=query&m=25&p=exact&l=en'
-var translate = require('yandex-translate-api')('trnsl.1.1.20181207T124243Z.f7c9b30e02a701fa.21743b81008508970d938c786cb529829818e13b');
+const Ya = require('yandex-translate-api');
+var app2 = new Ya('trnsl.1.1.20181207T124243Z.f7c9b30e02a701fa.21743b81008508970d938c786cb529829818e13b');
 
 app.get('/', function (req, res) {
 res.send(JSON.stringify({ Hello: 'World'}));
@@ -31,7 +32,9 @@ bot.onText(/\/start/, (msg) => {
 
 });
 
-
+app2.translate('Hello world!', 'ru', 'plain', (data) => {
+    console.log(data); // object { code: 200, lang: 'en-ru', text: ['Привет мир!'] }
+});
 bot.on('message', (msg) => {
     if (msg.text.toString() === trigger) {
         request(url, function (err, response, body) {
@@ -72,11 +75,7 @@ bot.on('message', (msg) => {
             }
         });    }
     if (msg.text.toString() === trigger5) {
-        translate('I like fresh baked bread', { to: 'ru'}, function(err, res) {
-            console.log(res.text);
-            bot.sendMessage(msg.chat.id, res.text);
-
-        });
+        bot.sendMessage(msg.chat.id, 'helwo');
 
     }
 });
