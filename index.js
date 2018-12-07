@@ -32,8 +32,7 @@ bot.onText(/\/start/, (msg) => {
 
 request('https://glosbe.com/gapi/translate?from=tr&dest=fa&format=json&phrase=ev&pretty=true', { json: true }, (err, res, body) => {
     if (err) { return console.log(err); }
-    console.log(body.url);
-    console.log(body.explanation);
+    console.log(body);
 });
 bot.on('message', (msg) => {
     if (msg.text.toString() === trigger) {
