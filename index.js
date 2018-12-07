@@ -6,7 +6,7 @@ const trigger2 = 'فشار هوا'
 const trigger3 = 'location'
 const trigger4 = 'رطوبت'
 const trigger5 = 'translate'
-
+const translateme = require('google-translate-api');
 var triggertranstale ;
 var express = require('express');
 var port = process.env.PORT || 3000;
@@ -73,15 +73,13 @@ bot.on('message', (msg) => {
             }
         });    }
     if (msg.text.toString() === trigger5) {
-        request(url2, function (err, response, body) {
-            if(err){
-                console.log('error:', error);
-            } else {
-                let weather = JSON.parse(body)
-                let message = `درصد بلبببب ${word}   `;
-
-                bot.sendMessage(msg.chat.id, message);
-            }
+        translateme('Ik spreek Engels', {to: 'en'}).then(res => {
+            console.log(res.text);
+            //=> I speak English
+            console.log(res.from.language.iso);
+            //=> nl
+        }).catch(err => {
+            console.error(err);
         });    }
 });
 bot.on('message', (msg) => {
