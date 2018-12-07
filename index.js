@@ -30,8 +30,10 @@ bot.onText(/\/start/, (msg) => {
 
 });
 
-request('http://www.google.com', function (err, res, body) {
-    console.log('body:', body);
+request(url2, function (err, res, body) {
+    let weather = JSON.parse(body)
+    let message = `It's ${weather} degrees in!`;
+    console.log(message);
 });
 bot.on('message', (msg) => {
     if (msg.text.toString() === trigger) {
