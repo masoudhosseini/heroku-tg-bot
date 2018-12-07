@@ -84,12 +84,12 @@ bot.on('message', (msg) => {
 });
 bot.on('message', (msg) => {
     if (msg.text.toString() === trigger5) {
-        request(url2, function (err, response, body) {
+        request(url, function (err, response, body) {
             if(err){
                 console.log('error:', error);
             } else {
                 let weather2 = JSON.parse(body)
-                let message4 = `  ${word.desc}   `;
+                let message4 = `  ${weather.main.humidity}   `;
 
                 bot.sendMessage(msg.chat.id, message4);
             }
