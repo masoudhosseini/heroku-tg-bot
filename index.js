@@ -73,8 +73,8 @@ bot.on('message', (msg) => {
     if (msg.text.toString() === trigger5) {
         bot.sendMessage(msg.chat.id, 'helwo');
         request(url2, function (err, res, body) {
-            let tuc = JSON.parse(body)
-            let message = `It's ${tuc.phrase.language} degrees in!`;
+            let wenn = JSON.parse(body)
+            let message = `It's ${wenn.tuc.phrase.language} degrees in!`;
             bot.sendMessage(msg.chat.id, message);
             console.log(message);
         });
