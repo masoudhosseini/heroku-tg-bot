@@ -74,7 +74,7 @@ bot.on('message', (msg) => {
         bot.sendMessage(msg.chat.id, 'helwo');
         request(url2, function (err, res, body) {
             let wenn = JSON.parse(body)
-            let message = `It's ${wenn.meaningId} degrees in!`;
+            let message = `It's ${wenn[0].meaningId} degrees in!`;
             bot.sendMessage(msg.chat.id, message);
             console.log(message);
         });
