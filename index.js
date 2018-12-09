@@ -47,19 +47,27 @@ bot.on('message', (msg) => {
     }
     else if (msg.text.toString() === trigger2) {
 
-        let fromvar1='tr';
+        let fromvar1=1;
         let tovar1='fa';
 
     }
     else if (msg.text.toString() === trigger4) {
 
-        let fromvar1='fa';
+        let fromvar1=2;
         let tovar1='tr';
 
     }
-    else  {
-        let loghat=msg.text;
-        let url2 = `http://glosbe.com/gapi/translate?from=${fromvar1}&dest=${tovar1}&format=json&phrase=${loghat}`;
+    else {
+         let loghat = msg.text;
+         if (fromvar1 === 1) {
+
+         let url2 = `http://glosbe.com/gapi/translate?from=tr&dest=fa&format=json&phrase=${loghat}`;
+     }
+         else{
+             let url2 = `http://glosbe.com/gapi/translate?from=fa&dest=tr&format=json&phrase=${loghat}`;
+
+         }
+
          console.log(url2);
 
          request(url2, function (err, response, body) {
