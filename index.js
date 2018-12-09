@@ -60,7 +60,9 @@ bot.on('message', (msg) => {
     else  {
         let loghat=msg.text;
         let url2 = `http://glosbe.com/gapi/translate?from=${fromvar1}&dest=${tovar1}&format=json&phrase=${loghat}`;
-            request(url2, function (err, response, body) {
+         console.log(url2);
+
+         request(url2, function (err, response, body) {
                 let wenn = JSON.parse(body);
                 if (wenn.tuc.length < 1) {
                     bot.sendMessage(msg.chat.id, 'بلد نبودم :((((');
