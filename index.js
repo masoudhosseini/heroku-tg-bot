@@ -79,7 +79,7 @@ bot.on('message', (msg) => {
 
     }
     else{
-        let loghat=msg.text;
+        let loghat=msg.text.toString();
         let url2 = `http://glosbe.com/gapi/translate?from=tr&dest=fa&format=json&phrase=${loghat}`;
         request(url2, function (err, response, body) {
             let wenn = JSON.parse(body)
