@@ -84,11 +84,8 @@ bot.on('message', (msg) => {
     }
     else{
         let loghat=msg.text;
-        console.log('debudddddddd');
-        console.log(loghat);
         let url2 = `http://glosbe.com/gapi/translate?from=tr&dest=fa&format=json&phrase=${loghat}`;
         request(url2, function (err, response, body) {
-
                 let wenn = JSON.parse(body)
                 let message = ` ${wenn.tuc[0].phrase.text} :) `;
                 bot.sendMessage(msg.chat.id, message);
