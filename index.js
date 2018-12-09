@@ -49,26 +49,17 @@ bot.on('message', (msg) => {
     }
     else if (msg.text.toString() === trigger2) {
 
-         fromvar1='tr';
-         tovar1='fa';
-         bot.sendMessage(msg.chat.id, fromvar1);
+
 
     }
     else if (msg.text.toString() === trigger4) {
 
-         fromvar1='fa';
-          tovar1='tr';
-         bot.sendMessage(msg.chat.id, fromvar1);
+
 
     }
     else {
          let loghat = msg.text;
-
             let url2 = `http://glosbe.com/gapi/translate?from=tr&dest=fa&format=json&phrase=${loghat}`;
-
-         bot.sendMessage(msg.chat.id, url2);
-
-
          console.log(url2);
 
          request(url2, function (err, response, body) {
