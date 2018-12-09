@@ -2,9 +2,9 @@ const Telegrambot = require('node-telegram-bot-api')
 const TOKEN = '658527596:AAEkA5Vkbq_RFQgxOMz4PlffltVfuu9wGuQ'
 const bot = new Telegrambot(TOKEN,{polling:true})
 const trigger = 'دما'
-const trigger2 = 'فشار هوا'
+const trigger2 = 'ترکی به فارسی'
 const trigger3 = 'location'
-const trigger4 = 'رطوبت'
+const trigger4 = 'فارسی به ترکی'
 const trigger5 = 'translate'
 var express = require('express');
 var port = process.env.PORT || 3000;
@@ -23,7 +23,7 @@ bot.onText(/\/start/, (msg) => {
 
     bot.sendMessage(msg.chat.id, "Welcome", {
         "reply_markup": {
-            "keyboard": [["فشار هوا", "رطوبت"],   ["دما"], ["location"],   ["translate"]]
+            "keyboard": [["ترکی به فارسی", "فارسی به ترکی"],     ["translate"]]
         }
     });
 
@@ -55,9 +55,21 @@ bot.on('message', (msg) => {
 
 
     }
+    else if (msg.text.toString() === trigger2) {
+
+        let fromvar1='tr';
+        let tovar1='fa';
+
+    }
+    else if (msg.text.toString() === trigger4) {
+
+        let fromvar1='fa';
+        let tovar1='tr';
+
+    }
     else  {
         let loghat=msg.text;
-        let url2 = `http://glosbe.com/gapi/translate?from=tr&dest=fa&format=json&phrase=${loghat}`;
+        let url2 = `http://glosbe.com/gapi/translate?from=${fromvar1}&dest=${tovar1}&format=json&phrase=${loghat}`;
             request(url2, function (err, response, body) {
                 let wenn = JSON.parse(body);
                 if (wenn.tuc.length < 1) {
