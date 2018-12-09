@@ -81,7 +81,7 @@ bot.on('message', (msg) => {
 
     }
     else{
-        loghat='ev';
+        let loghat=msg.text;
         request(url2, function (err, response, body) {
             let wenn = JSON.parse(body)
             let message = ` ${wenn.tuc[0].phrase.text} :) `;
