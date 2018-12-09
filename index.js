@@ -12,6 +12,8 @@ var app = express();
 let request = require('request');
 let apiKey = '6ee20a29bb9dd0705999f0d8529b3224';
 let url = 'http://api.openweathermap.org/data/2.5/weather?q=Orumiyeh,ir&units=metric&APPID=6ee20a29bb9dd0705999f0d8529b3224'
+let tovar1='fa';
+let fromvar1='tr';
 
 app.get('/', function (req, res) {
     res.send(JSON.stringify({ Hello: 'World'}));
@@ -47,20 +49,20 @@ bot.on('message', (msg) => {
     }
     else if (msg.text.toString() === trigger2) {
 
-        let fromvar1=1;
+        let fromvar1='tr';
         let tovar1='fa';
 
     }
     else if (msg.text.toString() === trigger4) {
 
-        let fromvar1=2;
-        let tovar1=tr;
+        let fromvar1='fa';
+         let tovar1='tr';
 
     }
     else {
          let loghat = msg.text;
 
-         let url2 = `http://glosbe.com/gapi/translate?from=${tovar1}&dest=fa&format=json&phrase=${loghat}`;
+         let url2 = `http://glosbe.com/gapi/translate?from=${tovar1}&dest=${fromvar1}&format=json&phrase=${loghat}`;
          bot.sendMessage(msg.chat.id, url2);
 
 
