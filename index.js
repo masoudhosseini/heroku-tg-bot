@@ -78,6 +78,10 @@ bot.on('message', (msg) => {
 
 
     }
+    else if (msg.text.toString() === '/start') {
+
+
+    }
     else{
         let loghat=msg.text;
         console.log('debudddddddd');
