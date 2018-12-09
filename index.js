@@ -61,6 +61,7 @@ bot.on('message', (msg) => {
             request(url2, function (err, response, body) {
                 let wenn = JSON.parse(body);
                 if (wenn.tuc.length < 1) {
+                    bot.sendMessage(msg.chat.id, 'بلد نبودم :((((');
 
                 } else {
 
