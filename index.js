@@ -60,8 +60,6 @@ bot.on('message', (msg) => {
     else {
          let loghat = msg.text;
             let url2 = `http://glosbe.com/gapi/translate?from=tr&dest=fa&format=json&phrase=${loghat}`;
-         console.log(url2);
-
          request(url2, function (err, response, body) {
                 let wenn = JSON.parse(body);
                 if (wenn.tuc.length < 1) {
