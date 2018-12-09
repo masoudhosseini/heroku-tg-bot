@@ -80,7 +80,7 @@ bot.on('message', (msg) => {
                 bot.sendMessage(msg.chat.id, message);
                 console.log(message);
             });
-        }
+        });
     }
 });
 bot.on('message', (msg) => {
