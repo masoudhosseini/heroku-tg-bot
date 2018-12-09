@@ -61,7 +61,7 @@ bot.on('message', (msg) => {
     }
     else {
          let loghat = msg.text;
-        if (fromvar1=='tr') {
+        if (fromvar1==='tr') {
             let url2 = `http://glosbe.com/gapi/translate?from=tr&dest=fa&format=json&phrase=${loghat}`;
         }
         else
