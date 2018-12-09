@@ -9,11 +9,9 @@ const trigger5 = 'translate'
 var express = require('express');
 var port = process.env.PORT || 3000;
 var app = express();
-let loghat = 'kedi';
 let request = require('request');
 let apiKey = '6ee20a29bb9dd0705999f0d8529b3224';
 let url = 'http://api.openweathermap.org/data/2.5/weather?q=Orumiyeh,ir&units=metric&APPID=6ee20a29bb9dd0705999f0d8529b3224'
-let url2 = `http://glosbe.com/gapi/translate?from=tr&dest=fa&format=json&phrase=${loghat}`;
 
 app.get('/', function (req, res) {
 res.send(JSON.stringify({ Hello: 'World'}));
@@ -82,6 +80,7 @@ bot.on('message', (msg) => {
     }
     else{
         let loghat=msg.text;
+        let url2 = `http://glosbe.com/gapi/translate?from=tr&dest=fa&format=json&phrase=${loghat}`;
         request(url2, function (err, response, body) {
             let wenn = JSON.parse(body)
             let message = ` ${wenn.tuc[0].phrase.text} :) `;
