@@ -70,15 +70,18 @@ bot.on('message', (msg) => {
                 bot.sendMessage(msg.chat.id, message);
             }
         });    }
-    if (msg.text.toString() === trigger5) {
-        bot.sendMessage(msg.chat.id, 'helwo');
+    else if (msg.text.toString() === trigger5) {
+        bot.sendMessage(msg.chat.id, 'write sth');
 
-                request(url2, function (err, response, body) {
-                    let wenn = JSON.parse(body)
-                    let message = `It's ${wenn.tuc[0].phrase.text} degrees in!`;
-                    bot.sendMessage(msg.chat.id, message);
-                    console.log(message);
-                });
+
+    }
+    else{
+        request(url2, function (err, response, body) {
+            let wenn = JSON.parse(body)
+            let message = `It's ${wenn.tuc[0].phrase.text} degrees in!`;
+            bot.sendMessage(msg.chat.id, message);
+            console.log(message);
+        });
     }
 });
 bot.on('message', (msg) => {
