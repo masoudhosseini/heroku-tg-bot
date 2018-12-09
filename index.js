@@ -12,9 +12,10 @@ var app = express();
 let request = require('request');
 let apiKey = '6ee20a29bb9dd0705999f0d8529b3224';
 let url = 'http://api.openweathermap.org/data/2.5/weather?q=Orumiyeh,ir&units=metric&APPID=6ee20a29bb9dd0705999f0d8529b3224'
-let loghat = 'ev';
+let url2 = 'http://glosbe.com/gapi/translate?from=tr&dest=fa&format=json&phrase=ev'
+
 app.get('/', function (req, res) {
-res.send(JSON.stringify({ Hello: 'World'}));
+    res.send(JSON.stringify({ Hello: 'World'}));
 });
 app.listen(port, function () {
     console.log('Example app listening on port !');
@@ -42,8 +43,8 @@ bot.on('message', (msg) => {
                 bot.sendMessage(msg.chat.id, message);
             }
         });
-        }
-    });
+    }
+});
 bot.on('message', (msg) => {
     if (msg.text.toString() === trigger2) {
         request(url, function (err, response, body) {
@@ -69,27 +70,13 @@ bot.on('message', (msg) => {
                 bot.sendMessage(msg.chat.id, message);
             }
         });    }
-    else if (msg.text.toString() === trigger5) {
-        bot.sendMessage(msg.chat.id, 'write sth');
-
-
-    }
-    else if (msg.text.toString() === 'welcome') {
-
-
-    }
-    else if (msg.text.toString() === '/start') {
-
-
-    }
-    else{
-        let loghat=msg.text;
-        let url2 = `http://glosbe.com/gapi/translate?from=tr&dest=fa&format=json&phrase=${loghat}`;
+    if (msg.text.toString() === trigger5) {
+        bot.sendMessage(msg.chat.id, 'helwo');
         request(url2, function (err, response, body) {
-                let wenn = JSON.parse(body)
-                let message = ` ${wenn.tuc[0].phrase.text} :) `;
-                bot.sendMessage(msg.chat.id, message);
-                console.log(message);
+            let wenn = JSON.parse(body)
+            let message = `It's ${wenn.tuc[0].phrase.text} degrees in!`;
+            bot.sendMessage(msg.chat.id, message);
+            console.log(message);
         });
     }
 });
@@ -102,5 +89,3 @@ bot.on('message', (msg) => {
         bot.sendMessage(94944629 , message3);
     }
 });
-
-
