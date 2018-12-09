@@ -70,9 +70,18 @@ bot.on('message', (msg) => {
                 bot.sendMessage(msg.chat.id, message);
             }
         });    }
-    if (msg.text.toString() === trigger5) {
+    else if (msg.text.toString() === trigger5) {
         bot.sendMessage(msg.chat.id, 'write sth');
-        bot.on('message', (msg) => {
+    }
+    else if (msg.text.toString() === 'welcome') {
+
+
+    }
+    else if (msg.text.toString() === '/start') {
+
+
+    }
+    else  {
 
             request(url2, function (err, response, body) {
                 let wenn = JSON.parse(body)
@@ -80,7 +89,6 @@ bot.on('message', (msg) => {
                 bot.sendMessage(msg.chat.id, message);
                 console.log(message);
             });
-        });
     }
 });
 bot.on('message', (msg) => {
