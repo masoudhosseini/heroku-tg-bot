@@ -76,7 +76,7 @@ bot.on('message', (msg) => {
             let wenn = JSON.parse(body)
             let message = `It's ${wenn.url} degrees in!`;
             bot.sendMessage(msg.chat.id, message);
-            console.log(message);
+            console.log(body);
         });
     }
 });
