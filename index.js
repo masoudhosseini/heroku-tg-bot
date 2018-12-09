@@ -54,7 +54,7 @@ bot.on('message', (msg) => {
     else if (msg.text.toString() === trigger4) {
 
         let fromvar1=2;
-        let tovar1='tr';
+        let tovar1=tr;
 
     }
     else {
