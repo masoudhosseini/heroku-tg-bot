@@ -59,10 +59,15 @@ bot.on('message', (msg) => {
         let loghat=msg.text;
         let url2 = 'http://glosbe.com/gapi/translate?from=tr&dest=fa&format=json&phrase=kedi';
             request(url2, function (err, response, body) {
-                let wenn = JSON.parse(body)
+                let wenn = JSON.parse(body);
+                if (wenn.tuc.length < 1) {
+
+                } else {
+
                 let message = ` ${wenn.tuc[0].phrase.text} :)`;
                 bot.sendMessage(msg.chat.id, message);
                 console.log(message);
+            }
             });
     }
 });
