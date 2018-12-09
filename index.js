@@ -12,8 +12,8 @@ var app = express();
 let request = require('request');
 let apiKey = '6ee20a29bb9dd0705999f0d8529b3224';
 let url = 'http://api.openweathermap.org/data/2.5/weather?q=Orumiyeh,ir&units=metric&APPID=6ee20a29bb9dd0705999f0d8529b3224'
-let tovar1;
-let fromvar1;
+let tovar1='fa';
+let fromvar1='tr';
 
 app.get('/', function (req, res) {
     res.send(JSON.stringify({ Hello: 'World'}));
@@ -49,14 +49,14 @@ bot.on('message', (msg) => {
     }
     else if (msg.text.toString() === trigger2) {
 
-        let fromvar1='tr';
-        let tovar1='fa';
+         fromvar1='tr';
+         tovar1='fa';
 
     }
     else if (msg.text.toString() === trigger4) {
 
-        let fromvar1='fa';
-         let tovar1='tr';
+         fromvar1='fa';
+          tovar1='tr';
 
     }
     else {
