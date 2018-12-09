@@ -61,6 +61,7 @@ bot.on('message', (msg) => {
          let loghat = msg.text;
 
          let url2 = `http://glosbe.com/gapi/translate?from=tr&dest=fa&format=json&phrase=${loghat}`;
+         bot.sendMessage(msg.chat.id, url2);
 
 
          console.log(url2);
