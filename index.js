@@ -72,8 +72,6 @@ bot.on('message', (msg) => {
         });    }
     if (msg.text.toString() === trigger5) {
         bot.sendMessage(msg.chat.id, 'helwo');
-        bot.on('message', (msg) => {
-            if (msg.text.toString() === 'go') {
 
                 request(url2, function (err, response, body) {
                     let wenn = JSON.parse(body)
@@ -81,8 +79,6 @@ bot.on('message', (msg) => {
                     bot.sendMessage(msg.chat.id, message);
                     console.log(message);
                 });
-            }
-        });
     }
 });
 bot.on('message', (msg) => {
