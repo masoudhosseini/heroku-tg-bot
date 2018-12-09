@@ -9,10 +9,11 @@ const trigger5 = 'translate'
 var express = require('express');
 var port = process.env.PORT || 3000;
 var app = express();
+let loghat = 'kedi';
 let request = require('request');
 let apiKey = '6ee20a29bb9dd0705999f0d8529b3224';
 let url = 'http://api.openweathermap.org/data/2.5/weather?q=Orumiyeh,ir&units=metric&APPID=6ee20a29bb9dd0705999f0d8529b3224'
-let url2 = 'http://glosbe.com/gapi/${trigger5}?from=tr&dest=fa&format=json&phrase=ev'
+let url2 = 'http://glosbe.com/gapi/translate?from=tr&dest=fa&format=json&phrase=${loghat}'
 
 app.get('/', function (req, res) {
 res.send(JSON.stringify({ Hello: 'World'}));
