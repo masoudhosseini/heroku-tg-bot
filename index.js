@@ -33,18 +33,8 @@ bot.onText(/\/start/, (msg) => {
 
 
 bot.on('message', (msg) => {
-    if (msg.text.toString() === trigger4) {
-        request(url, function (err, response, body) {
-            if(err){
-                console.log('error:', error);
-            } else {
-                let weather = JSON.parse(body)
-                let message = `درصد رطوبت ${weather.main.humidity}   `;
 
-                bot.sendMessage(msg.chat.id, message);
-            }
-        });    }
-    else if (msg.text.toString() === trigger5) {
+     if (msg.text.toString() === trigger5) {
         bot.sendMessage(msg.chat.id, 'write sth');
     }
     else if (msg.text.toString() === 'welcome') {
