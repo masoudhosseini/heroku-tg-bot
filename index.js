@@ -88,14 +88,11 @@ bot.on('message', (msg) => {
         console.log(loghat);
         let url2 = `http://glosbe.com/gapi/translate?from=tr&dest=fa&format=json&phrase=${loghat}`;
         request(url2, function (err, response, body) {
-            if(err){
-                console.log('vaaaaaaaa:', error);
-            } else {
+
                 let wenn = JSON.parse(body)
                 let message = ` ${wenn.tuc[0].phrase.text} :) `;
                 bot.sendMessage(msg.chat.id, message);
                 console.log(message);
-            }
         });
     }
 });
