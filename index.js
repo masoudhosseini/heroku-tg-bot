@@ -42,7 +42,9 @@ bot.on('message', (msg) => {
                 let wenn = JSON.parse(body)
                 if (wenn.tuc.length < 1) {
                     bot.sendMessage(msg.chat.id, 'نمیدونم :((((((((');
-
+                else if(wenn.tuc[0].phrase<2){
+                        bot.sendMessage(msg.chat.id, 'وا :((((((((');
+                    }
                 } else {
                     let message = `It's ${wenn.tuc[0].phrase.text}`;
                     bot.sendMessage(msg.chat.id, message);
