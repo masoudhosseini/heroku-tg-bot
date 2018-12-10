@@ -26,7 +26,7 @@ bot.on('message', (msg) => {
     }
     else if (msg.text.toString() === '/start') {
         bot.sendMessage(msg.chat.id, 'ورژن 1 مترجم ترکی به فارسی');
-        bot.sendMessage(msg.chat.id, 'خوش آمدید لطفا حرف اول واژه را با حروف کوچک بنویسید.');
+        bot.sendMessage(msg.chat.id, 'خوش آمدید ');
 
     }
     else if (msg.text.toString() === 'welcome') {
@@ -39,13 +39,13 @@ bot.on('message', (msg) => {
         request(url2, function (err, response, body) {
             if(err){
                 bot.sendMessage(msg.chat.id, 'وای دده :((((((((');
-                bot.sendMessage(msg.chat.id, 'حرف اول واژه را با حروف کوچک بنویسید. با حروف لاتین تایپ کنید.');
+                bot.sendMessage(msg.chat.id, ' با حروف لاتین تایپ کنید.');
 
             } else {
                 let wenn = JSON.parse(body)
                 if (wenn.tuc.length < 1) {
                     bot.sendMessage(msg.chat.id, 'نمیدونم :((((((((');
-                    bot.sendMessage(msg.chat.id, 'حرف اول واژه را با حروف کوچک بنویسید. با حروف لاتین تایپ کنید.');
+                    bot.sendMessage(msg.chat.id, ' با حروف لاتین تایپ کنید.');
 
                 } else {
 
