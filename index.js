@@ -43,7 +43,7 @@ bot.on('message', (msg) => {
                 if (wenn.tuc.length < 1) {
                     bot.sendMessage(msg.chat.id, 'نمیدونم :((((((((');
                 } else {
-                    if (variable === undefined || variable === null) {
+                    if (wenn.tuc[0].phrase.text === undefined || wenn.tuc[0].phrase.text === null) {
                         bot.sendMessage(msg.chat.id, 'کیبورد رو انگلیسی کن :((((((((');
 
                     }
