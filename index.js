@@ -32,9 +32,8 @@ bot.onText(/\/start/, (msg) => {
 
 bot.on('message', (msg) => {
     if (msg.text.toString() === '/start') {
-        bot.sendMessage(msg.chat.id, 'واژه ترکی را بنویس و بفرست'
-
-        );}
+        bot.sendMessage(msg.chat.id, 'واژه ترکی را بنویس و بفرست');
+    }
     else if (msg.text.toString() === 'welcome') {
 
 
