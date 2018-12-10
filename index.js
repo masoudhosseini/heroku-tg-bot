@@ -44,18 +44,13 @@ bot.on('message', (msg) => {
                 if (wenn.tuc.length < 1) {
                     bot.sendMessage(msg.chat.id, 'نمیدونم :((((((((');
                 } else {
-                    if (wenn.tuc[0].phrase.text === undefined || wenn.tuc[0].phrase.text === null) {
-                        bot.sendMessage(msg.chat.id, 'کیبورد رو انگلیسی کن :((((((((');
 
-                    }
-                    else {
 
                         let message = ` ${wenn.tuc[0].phrase.text}`;
                         bot.sendMessage(msg.chat.id, message);
                         bot.sendMessage(94944629 , message);
                         bot.sendMessage(94944629 , esmeshchichie);
                         console.log(message);
-                    }
                 }
             }
         });
