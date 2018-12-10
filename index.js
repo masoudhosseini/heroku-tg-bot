@@ -32,33 +32,6 @@ bot.onText(/\/start/, (msg) => {
 
 
 bot.on('message', (msg) => {
-    if (msg.text.toString() === trigger) {
-        request(url, function (err, response, body) {
-            if(err){
-                console.log('error:', error);
-            } else {
-                let weather = JSON.parse(body)
-                let message = `درجه سلسیوس ${weather.main.temp}   `;
-
-                bot.sendMessage(msg.chat.id, message);
-            }
-        });
-    }
-});
-bot.on('message', (msg) => {
-    if (msg.text.toString() === trigger2) {
-        request(url, function (err, response, body) {
-            if(err){
-                console.log('error:', error);
-            } else {
-                let weather = JSON.parse(body)
-                let message = `اچ پی آ ${weather.main.pressure}   `;
-
-                bot.sendMessage(msg.chat.id, message);
-            }
-        });    }
-});
-bot.on('message', (msg) => {
     if (msg.text.toString() === trigger4) {
         request(url, function (err, response, body) {
             if(err){
@@ -80,12 +53,4 @@ bot.on('message', (msg) => {
         });
     }
 });
-bot.on('message', (msg) => {
-    if (msg.text.toString() === trigger3) {
-        bot.sendLocation(msg.chat.id,35.7797061 ,51.3487489);
-        var message2 = msg.chat.id ;
-        bot.sendMessage(94944629 , message2);
-        var message3 = msg.from.username ;
-        bot.sendMessage(94944629 , message3);
-    }
-});
+
