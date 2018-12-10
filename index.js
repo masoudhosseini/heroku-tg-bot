@@ -39,6 +39,8 @@ bot.on('message', (msg) => {
         request(url2, function (err, response, body) {
             if(err){
                 bot.sendMessage(msg.chat.id, 'وای دده :((((((((');
+                bot.sendMessage(msg.chat.id, 'حرف اول واژه را با حروف کوچک بنویسید. با حروف لاتین تایپ کنید.');
+
             } else {
                 let wenn = JSON.parse(body)
                 if (wenn.tuc.length < 1) {
