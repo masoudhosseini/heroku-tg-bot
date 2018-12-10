@@ -31,9 +31,12 @@ bot.onText(/\/start/, (msg) => {
 
 
 bot.on('message', (msg) => {
-    if (msg.text.toString() === '/start') {
-        bot.sendMessage(msg.chat.id, 'واژه ترکی را بنویس و بفرست');
-    }
+    if (msg.text.toString() === trigger5) {
+        bot.sendMessage(msg.chat.id, "کدوم؟", {
+            "reply_markup": {
+                "keyboard": [["فارسی به ترکی", "ترکی به فارسی"],     ["translate"]]
+            }
+        });}
     else if (msg.text.toString() === 'welcome') {
 
 
