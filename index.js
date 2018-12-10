@@ -26,7 +26,7 @@ bot.on('message', (msg) => {
     }
     else if (msg.text.toString() === '/start') {
         bot.sendMessage(msg.chat.id, 'ورژن 1 مترجم ترکی به فارسی');
-        bot.sendMessage(msg.chat.id, 'خوش آمدید');
+        bot.sendMessage(msg.chat.id, 'خوش آمدید لطفا حرف اول واژه را با حروف کوچک بنویسید.');
 
     }
     else if (msg.text.toString() === 'welcome') {
