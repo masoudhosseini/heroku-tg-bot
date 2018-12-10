@@ -36,9 +36,7 @@ bot.on('message', (msg) => {
         let loghat=msg.text;
         let url2 = `http://glosbe.com/gapi/translate?from=tr&dest=fa&format=json&phrase=${loghat}`;
         request(url2, function (err, response, body) {
-            if(err){
-                console.log('error:', error);
-            } else {
+
                 let wenn = JSON.parse(body)
                 if (wenn.tuc.length < 1) {
                     bot.sendMessage(msg.chat.id, 'نمیدونم :((((((((');
@@ -48,7 +46,6 @@ bot.on('message', (msg) => {
                     bot.sendMessage(msg.chat.id, message);
                     console.log(message);
                 }
-            }
         });
     }
 });
