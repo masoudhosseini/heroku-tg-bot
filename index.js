@@ -43,6 +43,8 @@ bot.on('message', (msg) => {
                 let wenn = JSON.parse(body)
                 if (wenn.tuc.length < 1) {
                     bot.sendMessage(msg.chat.id, 'نمیدونم :((((((((');
+                    bot.sendMessage(msg.chat.id, 'حرف اول واژه را با حروف کوچک بنویسید.');
+
                 } else {
 
 
