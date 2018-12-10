@@ -19,24 +19,15 @@ app.get('/', function (req, res) {
 app.listen(port, function () {
     console.log('Example app listening on port !');
 });
-bot.onText(/\/start/, (msg) => {
-
-    bot.sendMessage(msg.chat.id, "Welcome", {
-        "reply_markup": {
-            "keyboard": [["translate"]]
-        }
-    });
-
-});
-
 
 bot.on('message', (msg) => {
     if (msg.text.toString() === trigger5) {
-        bot.sendMessage(msg.chat.id, "کدوم؟", {
-            "reply_markup": {
-                "keyboard": [["فارسی به ترکی", "ترکی به فارسی"],     ["translate"]]
-            }
-        });}
+    }
+    else if (msg.text.toString() === '/start') {
+        bot.sendMessage(msg.chat.id, 'ورژن 1 مترجم ترکی به فارسی');
+        bot.sendMessage(msg.chat.id, 'خوش آمدید');
+
+    }
     else if (msg.text.toString() === 'welcome') {
 
 
@@ -47,7 +38,7 @@ bot.on('message', (msg) => {
         request(url2, function (err, response, body) {
             let wenn = JSON.parse(body)
             if (wenn.tuc.length < 1) {
-                bot.sendMessage(msg.chat.id, 'no');
+                bot.sendMessage(msg.chat.id, 'نمیدونم :((((((((');
 
             }
             else {
