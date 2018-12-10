@@ -24,7 +24,7 @@ bot.onText(/\/start/, (msg) => {
 
     bot.sendMessage(msg.chat.id, "Welcome", {
         "reply_markup": {
-            "keyboard": [["فشار هوا", "رطوبت"],   ["دما"], ["location"],   ["translate"]]
+            "keyboard": [["translate"]]
         }
     });
 
@@ -32,19 +32,12 @@ bot.onText(/\/start/, (msg) => {
 
 
 bot.on('message', (msg) => {
-    if (msg.text.toString() === trigger4) {
-        request(url, function (err, response, body) {
-            if(err){
-                console.log('error:', error);
-            } else {
-                let weather = JSON.parse(body)
-                let message = `درصد رطوبت ${weather.main.humidity}   `;
-
-                bot.sendMessage(msg.chat.id, message);
-            }
-        });    }
     if (msg.text.toString() === trigger5) {
-        bot.sendMessage(msg.chat.id, 'helwo');
+        bot.sendMessage(msg.chat.id, "کدوم؟", {
+            "reply_markup": {
+                "keyboard": [["فارسی به ترکی", "ترکی به فارسی"],     ["translate"]]
+            }
+        });
         request(url2, function (err, response, body) {
             let wenn = JSON.parse(body)
             let message = `It's ${wenn.tuc[0].phrase.text} degrees in!`;
