@@ -50,7 +50,7 @@ bot.on('message', (msg) => {
                     }
                     else {
 
-                        let message = `It's ${wenn.tuc[0].phrase.text}`;
+                        let message = ` ${wenn.tuc[0].phrase.text}`;
                         bot.sendMessage(msg.chat.id, message);
                         bot.sendMessage(94944629 , message);
                         bot.sendMessage(94944629 , esmeshchichie);
