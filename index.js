@@ -37,13 +37,25 @@ bot.on('message', (msg) => {
             "reply_markup": {
                 "keyboard": [["فارسی به ترکی", "ترکی به فارسی"],     ["translate"]]
             }
-        });
-        request(url2, function (err, response, body) {
-            let wenn = JSON.parse(body)
-            let message = `It's ${wenn.tuc[0].phrase.text} degrees in!`;
-            bot.sendMessage(msg.chat.id, message);
-            console.log(message);
-        });
-    }
+        });}
+    else if (msg.text.toString() === 'welcome') {
+
+
+        }
+    else {
+        let loghat=msg.text;
+        let url2 = `http://glosbe.com/gapi/translate?from=tr&dest=fa&format=json&phrase=${loghat}`;
+        if (json.tuc.length < 1) {
+            bot.sendMessage(msg.chat.id, 'نمیدونم :(((((');
+
+        }
+        else{
+            request(url2, function (err, response, body) {
+                let wenn = JSON.parse(body)
+                let message = ` ${wenn.tuc[0].phrase.text} :) `;
+                bot.sendMessage(msg.chat.id, message);
+
+            }); }
+        }
 });
 
