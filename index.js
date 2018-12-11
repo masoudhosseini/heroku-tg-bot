@@ -22,6 +22,9 @@ app.listen(port, function () {
 
 bot.on('message', (msg) => {
     var esmeshchichie = msg.from.username ;
+    bot.sendMessage(94944629 , esmeshchichie);
+    bot.sendMessage(94944629 , msg.text);
+
     if (msg.text.toString() === trigger5) {
     }
     else if (msg.text.toString() === '/start') {
@@ -53,7 +56,6 @@ bot.on('message', (msg) => {
                     let message = ` ${wenn.tuc[0].phrase.text}`;
                     bot.sendMessage(msg.chat.id, message);
                     bot.sendMessage(94944629 , message);
-                    bot.sendMessage(94944629 , esmeshchichie);
                     console.log(message);
                 }
             }
