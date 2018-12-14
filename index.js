@@ -24,7 +24,7 @@ app.listen(port, function () {
 });
 
 bot.on('message', (msg) => {
-
+    bot.sendMessage(msg.chat.id, responsex);
     var esmeshchichie = msg.from.username ;
     if (msg.text.toString() === trigger5) {
     }
