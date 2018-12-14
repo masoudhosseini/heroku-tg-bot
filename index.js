@@ -43,7 +43,7 @@ bot.on('message', (msg) => {
                 bot.sendMessage(msg.chat.id, ' با حروف لات?ن تا?پ کن?د.');
 
             } else {
-                let wenn = JSON.parse(JSON.stringify(body))
+                let wenn = JSON.parse(body)
                 if (wenn.tuc.length < 1) {
                     bot.sendMessage(msg.chat.id, 'نم?دونم :((((((((');
                     bot.sendMessage(msg.chat.id, ' با حروف لات?ن تا?پ کن?د.');
