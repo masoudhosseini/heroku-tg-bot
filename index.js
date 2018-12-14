@@ -38,15 +38,23 @@ manager.addDocument('en', 'are you female?', 'greetings.weird');
 manager.addDocument('en', 'are you married?', 'greetings.weird');
 manager.addDocument('en', 'do you have dick?', 'greetings.weird');
 manager.addDocument('en', 'do you have pussy?', 'greetings.weird');
+manager.addDocument('en', 'what is your idea about masoud?', 'greetings.masoud');
+manager.addDocument('en', 'who is masoud?', 'greetings.masoud');
+manager.addDocument('en', 'do you know masoud?', 'greetings.masoud');
+manager.addDocument('en', 'tell me abou masoud', 'greetings.masoud');
 
 // Train also the NLG
 manager.addAnswer('en', 'greetings.bye', 'khudafizzzzz');
 manager.addAnswer('en', 'greetings.bye', 'gorusharikh!');
 manager.addAnswer('en', 'greetings.hello', 'salam!');
 manager.addAnswer('en', 'greetings.hello', 'salameleykim!');
-manager.addAnswer('en', 'greetings.weird', 'na sula lardi soshusan!');
-manager.addAnswer('en', 'greetings.weird', 'sana na!');
-manager.addAnswer('en', 'greetings.weird', 'dalah san!');
+manager.addAnswer('en', 'greetings.weird', 'این سوال از کجا به ذهنت رسید!');
+manager.addAnswer('en', 'greetings.weird', 'به تو چه!');
+manager.addAnswer('en', 'greetings.weird', 'فضولی!');
+manager.addAnswer('en', 'greetings.masoud', 'انسانی کامل');
+manager.addAnswer('en', 'greetings.masoud', 'به معنای واقعی کلمه آقا');
+manager.addAnswer('en', 'greetings.masoud', 'نمونه');
+manager.addAnswer('en', 'greetings.masoud', 'لیس کمثلهی شیع');
 
 // Train and save the model.
 
