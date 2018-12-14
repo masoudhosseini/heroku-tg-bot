@@ -47,6 +47,7 @@ manager.addAnswer('en', 'greetings.hello', 'Greetings!');
 })();
 bot.on('message', (msg) => {
     bot.sendMessage(msg.chat.id, responsex.answer);
+    manager.train();
     manager.process('en','hello');
     bot.sendMessage(msg.chat.id, responsex.answer);
 
