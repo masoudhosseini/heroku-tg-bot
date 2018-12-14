@@ -39,16 +39,16 @@ manager.addAnswer('en', 'greetings.hello', 'Hey there!');
 manager.addAnswer('en', 'greetings.hello', 'Greetings!');
 
 // Train and save the model.
-(async() => {
+async  function myfu() {
     await manager.train();
     manager.save();
     responsex = await manager.process('en', asliii);
     console.log(responsex.answer);
     consloe.log(asliii);
-})();
+}myfu();
 bot.on('message', (msg) => {
     asliii=msg.text.toString();
-    manager.process('en', asliii);
+    myfu();
     console.log(responsex.answer);
     console.log(asliii);
     var esmeshchichie = msg.from.username ;
