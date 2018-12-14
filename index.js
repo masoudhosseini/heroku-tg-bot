@@ -42,7 +42,7 @@ manager.addAnswer('en', 'greetings.hello', 'Greetings!');
 (async() => {
     await manager.train();
     manager.save();
-    responsex = await manager.process('en', 'I have to go');
+    responsex = await manager.process('en', 'hello');
     console.log(responsex);
 })();
 bot.on('message', (msg) => {
