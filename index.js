@@ -43,9 +43,9 @@ manager.addAnswer('en', 'greetings.hello', 'Greetings!');
 bot.on('message', (msg) => {
     asliii=msg.text.toString();
     (async () => {
+        responsex = await manager.process('en', asliii);
         await manager.train();
         manager.save();
-        responsex =  manager.process('en', asliii);
         console.log(responsex.answer);
         console.log(asliii);
     })();
