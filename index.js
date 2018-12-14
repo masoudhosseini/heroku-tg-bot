@@ -35,6 +35,7 @@ bot.on('message', (msg) => {
     }
     else {
         let loghat=msg.text.toLowerCase();
+        loghat.setEncoding('utf8');
         let url2 = `http://glosbe.com/gapi/translate?from=fa&dest=tr&format=json&phrase=${loghat}`;
         request(url2, function (err, response, body) {
             if(err){
