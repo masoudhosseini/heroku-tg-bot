@@ -41,15 +41,7 @@ manager.addAnswer('en', 'greetings.hello', 'Greetings!');
 // Train and save the model.
 
 bot.on('message', (msg) => {
-    asliii=msg.text.toString();
-    (async () => {
-        responsex = await manager.process('en', asliii);
-        await manager.train();
-        manager.save();
-        console.log(responsex.answer);
-        console.log(asliii);
-    })();
-    bot.sendMessage(msg.chat.id, responsex.answer);
+
     var esmeshchichie = msg.from.username ;
     if (msg.text.toString() === trigger5) {
     }
@@ -65,7 +57,15 @@ bot.on('message', (msg) => {
     else {
         let loghat=msg.text.toLowerCase();
         let url2 = `http://glosbe.com/gapi/translate?from=tr&dest=fa&format=json&phrase=${loghat}`;
-
+        asliii=msg.text.toString();
+        (async () => {
+            responsex = await manager.process('en', asliii);
+            await manager.train();
+            manager.save();
+            console.log(responsex.answer);
+            console.log(asliii);
+        })();
+        bot.sendMessage(msg.chat.id, responsex.answer);
     }
 });
 
