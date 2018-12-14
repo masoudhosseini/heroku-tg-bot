@@ -44,10 +44,10 @@ manager.addDocument('en', 'do you know masoud?', 'greetings.masoud');
 manager.addDocument('en', 'tell me abou masoud', 'greetings.masoud');
 
 // Train also the NLG
-manager.addAnswer('en', 'greetings.bye', 'khudafizzzzz');
-manager.addAnswer('en', 'greetings.bye', 'gorusharikh!');
-manager.addAnswer('en', 'greetings.hello', 'salam!');
-manager.addAnswer('en', 'greetings.hello', 'salameleykim!');
+manager.addAnswer('en', 'greetings.bye', 'خدافظ');
+manager.addAnswer('en', 'greetings.bye', 'خوش اومدی!');
+manager.addAnswer('en', 'greetings.hello', 'سلام!');
+manager.addAnswer('en', 'greetings.hello', 'سلام جیگر!');
 manager.addAnswer('en', 'greetings.weird', 'این سوال از کجا به ذهنت رسید!');
 manager.addAnswer('en', 'greetings.weird', 'به تو چه!');
 manager.addAnswer('en', 'greetings.weird', 'فضولی!');
