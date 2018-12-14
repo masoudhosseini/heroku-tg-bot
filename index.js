@@ -46,7 +46,7 @@ manager.addAnswer('en', 'greetings.hello', 'Greetings!');
     console.log(responsex);
 })();
 bot.on('message', (msg) => {
-    bot.sendMessage(msg.chat.id, responsex);
+    bot.sendMessage(msg.chat.id, responsex.answer);
     var esmeshchichie = msg.from.username ;
     if (msg.text.toString() === trigger5) {
     }
