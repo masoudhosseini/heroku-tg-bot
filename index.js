@@ -35,7 +35,7 @@ bot.on('message', (msg) => {
     }
     else {
         let loghat=msg.text.toLowerCase();
-        let url2 = `http://glosbe.com/gapi/translate?from=tr&dest=fa&format=json&phrase=${loghat}`;
+        let url2 = `http://glosbe.com/gapi/translate?from=fa&dest=tr&format=json&phrase=${loghat}`;
         request(url2, function (err, response, body) {
             if(err){
                 bot.sendMessage(msg.chat.id, 'وا? دده :((((((((');
