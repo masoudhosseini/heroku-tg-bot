@@ -45,7 +45,7 @@ bot.on('message', (msg) => {
     (async () => {
         await manager.train();
         manager.save();
-        responsex = await manager.process('en', asliii);
+        responsex =  manager.process('en', asliii);
         console.log(responsex.answer);
         console.log(asliii);
     })();
