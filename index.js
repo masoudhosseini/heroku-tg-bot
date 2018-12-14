@@ -39,12 +39,7 @@ manager.addAnswer('en', 'greetings.hello', 'Hey there!');
 manager.addAnswer('en', 'greetings.hello', 'Greetings!');
 
 // Train and save the model.
-(async() => {
-    await manager.train();
-    manager.save();
-    responsex = await manager.process('en', 'I have to go');
-    console.log(responsex);
-})();
+
 bot.on('message', (msg) => {
     bot.sendMessage(msg.chat.id, responsex.answer);
     manager.train();
