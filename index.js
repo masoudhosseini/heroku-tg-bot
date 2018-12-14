@@ -42,13 +42,13 @@ manager.addAnswer('en', 'greetings.hello', 'Greetings!');
 
 bot.on('message', (msg) => {
     asliii=msg.text.toString();
-    async  function myfu() {
+    (async () => {
         await manager.train();
         manager.save();
         responsex = await manager.process('en', asliii);
         console.log(responsex.answer);
         console.log(asliii);
-    }myfu();
+    })();
     bot.sendMessage(msg.chat.id, responsex.answer);
     var esmeshchichie = msg.from.username ;
     if (msg.text.toString() === trigger5) {
