@@ -42,12 +42,12 @@ manager.addAnswer('en', 'greetings.hello', 'Greetings!');
 (async() => {
     await manager.train();
     manager.save();
-    responsex = await manager.process('en', 'hello');
+    responsex = await manager.process('en', 'I have to go');
     console.log(responsex);
 })();
 bot.on('message', (msg) => {
     bot.sendMessage(msg.chat.id, responsex.answer);
-    manager.process('en',msg.text.toString());
+    manager.process('en','hello');
     bot.sendMessage(msg.chat.id, responsex.answer);
 
     var esmeshchichie = msg.from.username ;
