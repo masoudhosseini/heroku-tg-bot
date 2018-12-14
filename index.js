@@ -23,6 +23,14 @@ app.listen(port, function () {
 });
 
 bot.on('message', (msg) => {
+
+    (async() => {
+        await manager.train();
+        manager.save();
+        const response = await manager.process('en', 'I have to go');
+        bot.sendMessage(msg.chat.id, response);
+    })();
+
     var esmeshchichie = msg.from.username ;
     if (msg.text.toString() === trigger5) {
     }
@@ -79,9 +87,4 @@ manager.addAnswer('en', 'greetings.hello', 'Hey there!');
 manager.addAnswer('en', 'greetings.hello', 'Greetings!');
 
 // Train and save the model.
-(async() => {
-    await manager.train();
-    manager.save();
-    const response = await manager.process('en', 'I have to go');
-    console.log(response);
-})();
+
