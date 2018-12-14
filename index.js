@@ -49,7 +49,7 @@ async  function myfu() {
 bot.on('message', (msg) => {
     asliii=msg.text.toString();
     myfu();
-    console.log(responsex.answer);
+    bot.sendMessage(msg.chat.id, responsex.answer);
     console.log(asliii);
     var esmeshchichie = msg.from.username ;
     if (msg.text.toString() === trigger5) {
