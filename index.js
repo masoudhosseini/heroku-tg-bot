@@ -49,7 +49,6 @@ bot.on('message', (msg) => {
         console.log(responsex.answer);
         consloe.log(asliii);
     }myfu();
-    myfu();
     bot.sendMessage(msg.chat.id, responsex.answer);
     var esmeshchichie = msg.from.username ;
     if (msg.text.toString() === trigger5) {
