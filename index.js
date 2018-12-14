@@ -63,9 +63,9 @@ bot.on('message', (msg) => {
             await manager.train();
             manager.save();
             console.log(responsex.answer);
+            bot.sendMessage(msg.chat.id, responsex.answer);
             console.log(asliii);
         })();
-        bot.sendMessage(msg.chat.id, responsex.answer);
     }
 });
 
