@@ -47,7 +47,7 @@ bot.on('message', (msg) => {
         manager.save();
         responsex = await manager.process('en', asliii);
         console.log(responsex.answer);
-        consloe.log(asliii);
+        console.log(asliii);
     }myfu();
     bot.sendMessage(msg.chat.id, responsex.answer);
     var esmeshchichie = msg.from.username ;
