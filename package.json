@@ -13,6 +13,7 @@
   "dependencies": {
     "express": "^4.16.4",
     "google-translate-api": "^2.3.0",
+    "node-nlp": "^2.3.0",
     "node-telegram-bot-api": "^0.30.0",
     "request": "^2.88.0",
     "yandex-translate-api": "^1.0.1"
