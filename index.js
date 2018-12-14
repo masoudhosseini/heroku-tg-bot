@@ -15,7 +15,7 @@ let url = 'http://api.openweathermap.org/data/2.5/weather?q=Orumiyeh,ir&units=me
 const { NlpManager } = require('node-nlp');
 const manager = new NlpManager({ languages: ['en'] });
 var responsex = '';
-
+var asliii ='';
 app.get('/', function (req, res) {
     res.send(JSON.stringify({ Hello: 'World'}));
 });
@@ -39,13 +39,14 @@ manager.addAnswer('en', 'greetings.hello', 'Hey there!');
 manager.addAnswer('en', 'greetings.hello', 'Greetings!');
 
 // Train and save the model.
-
+(async() => {
+    await manager.train();
+    manager.save();
+    responsex = await manager.process('en', asliii);
+    console.log(responsex);
+})();
 bot.on('message', (msg) => {
-    bot.sendMessage(msg.chat.id, responsex.answer);
-    manager.train();
-    manager.process('en','hello');
-    bot.sendMessage(msg.chat.id, responsex.answer);
-
+   asliii=msg.text.toString();
     var esmeshchichie = msg.from.username ;
     if (msg.text.toString() === trigger5) {
     }
