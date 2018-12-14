@@ -47,10 +47,10 @@ manager.addAnswer('en', 'greetings.hello', 'Greetings!');
     consloe.log(asliii);
 })();
 bot.on('message', (msg) => {
-   asliii=msg.text.toString();
+    asliii=msg.text.toString();
     manager.process('en', asliii);
     console.log(responsex.answer);
-    consloe.log(asliii);
+    console.log(asliii);
     var esmeshchichie = msg.from.username ;
     if (msg.text.toString() === trigger5) {
     }
