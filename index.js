@@ -31,12 +31,22 @@ manager.addDocument('en', 'i must go', 'greetings.bye');
 manager.addDocument('en', 'hello', 'greetings.hello');
 manager.addDocument('en', 'hi', 'greetings.hello');
 manager.addDocument('en', 'howdy', 'greetings.hello');
+manager.addDocument('en', 'are you man?', 'greetings.weird');
+manager.addDocument('en', 'are you woman?', 'greetings.weird');
+manager.addDocument('en', 'are you crazy?', 'greetings.weird');
+manager.addDocument('en', 'are you female?', 'greetings.weird');
+manager.addDocument('en', 'are you married?', 'greetings.weird');
+manager.addDocument('en', 'do you have dick?', 'greetings.weird');
+manager.addDocument('en', 'do you have pussy?', 'greetings.weird');
 
 // Train also the NLG
-manager.addAnswer('en', 'greetings.bye', 'Till next time');
-manager.addAnswer('en', 'greetings.bye', 'see you soon!');
-manager.addAnswer('en', 'greetings.hello', 'Hey there!');
-manager.addAnswer('en', 'greetings.hello', 'Greetings!');
+manager.addAnswer('en', 'greetings.bye', 'khudafizzzzz');
+manager.addAnswer('en', 'greetings.bye', 'gorusharikh!');
+manager.addAnswer('en', 'greetings.hello', 'salam!');
+manager.addAnswer('en', 'greetings.hello', 'salameleykim!');
+manager.addAnswer('en', 'greetings.weird', 'na sula lardi soshusan!');
+manager.addAnswer('en', 'greetings.weird', 'sana na!');
+manager.addAnswer('en', 'greetings.weird', 'dalah san!');
 
 // Train and save the model.
 
