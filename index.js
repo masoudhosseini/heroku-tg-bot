@@ -48,6 +48,9 @@ manager.addAnswer('en', 'greetings.hello', 'Greetings!');
 })();
 bot.on('message', (msg) => {
    asliii=msg.text.toString();
+    manager.process('en', asliii);
+    console.log(responsex.answer);
+    consloe.log(asliii);
     var esmeshchichie = msg.from.username ;
     if (msg.text.toString() === trigger5) {
     }
