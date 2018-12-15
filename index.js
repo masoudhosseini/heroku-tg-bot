@@ -79,7 +79,6 @@ bot.on('message', (msg) => {
         asliii=msg.text.toString();
         (async () => {
             responsex = await manager.process('en', asliii);
-            manager.
             await manager.train();
             manager.save();
             console.log(responsex.answer);
