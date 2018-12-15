@@ -13,7 +13,7 @@ let request = require('request');
 let apiKey = '6ee20a29bb9dd0705999f0d8529b3224';
 let url = 'http://api.openweathermap.org/data/2.5/weather?q=Orumiyeh,ir&units=metric&APPID=6ee20a29bb9dd0705999f0d8529b3224'
 const { NlpManager } = require('node-nlp');
-const manager = new NlpManager({ languages: ['en'] });
+const manager = new NlpManager({ languages: ['en' , 'fa'] });
 var responsex = '';
 var asliii ='';
 app.get('/', function (req, res) {
@@ -31,6 +31,7 @@ manager.addDocument('en', 'i must go', 'greetings.bye');
 manager.addDocument('en', 'hello', 'greetings.hello');
 manager.addDocument('en', 'hi', 'greetings.hello');
 manager.addDocument('en', 'howdy', 'greetings.hello');
+manager.addDocument('fa', 'سلام', 'greetings.hello');
 manager.addDocument('en', 'are you man?', 'greetings.weird');
 manager.addDocument('en', 'are you woman?', 'greetings.weird');
 manager.addDocument('en', 'are you crazy?', 'greetings.weird');
@@ -78,6 +79,7 @@ bot.on('message', (msg) => {
         asliii=msg.text.toString();
         (async () => {
             responsex = await manager.process('en', asliii);
+            manager.
             await manager.train();
             manager.save();
             console.log(responsex.answer);
