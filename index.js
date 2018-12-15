@@ -31,6 +31,12 @@ manager.addDocument('en', 'i must go', 'greetings.bye');
 manager.addDocument('en', 'hello', 'greetings.hello');
 manager.addDocument('en', 'hi', 'greetings.hello');
 manager.addDocument('en', 'howdy', 'greetings.hello');
+manager.addDocument('fa', 'سلام', 'greetings.hello');
+manager.addDocument('fa', 'سلام علیکم', 'greetings.hello');
+manager.addDocument('fa', 'سلام چطوری', 'greetings.hello');
+manager.addDocument('fa', 'سلام خوبی', 'greetings.hello');
+manager.addDocument('fa', 'سلام و درود', 'greetings.hello');
+
 manager.addDocument('en', 'are you man?', 'greetings.weird');
 manager.addDocument('en', 'are you woman?', 'greetings.weird');
 manager.addDocument('en', 'are you crazy?', 'greetings.weird');
