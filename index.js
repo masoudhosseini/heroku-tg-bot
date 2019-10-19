@@ -25,8 +25,8 @@ bot.on('message', (msg) => {
     if (msg.text.toString() === trigger5) {
     }
     else if (msg.text.toString() === '/start') {
-        bot.sendMessage(msg.chat.id, 'ورژن 1 مترجم ترکی به فارسی');
-        bot.sendMessage(msg.chat.id, 'خوش آمدید ');
+        bot.sendMessage(msg.chat.id, 'ورژن 1 مترجم ترک? به فارس?');
+        bot.sendMessage(msg.chat.id, 'خوش آمد?د ');
 
     }
     else if (msg.text.toString() === 'welcome') {
@@ -38,14 +38,14 @@ bot.on('message', (msg) => {
         let url2 = `http://glosbe.com/gapi/translate?from=tr&dest=fa&format=json&phrase=${loghat}`;
         request(url2, function (err, response, body) {
             if(err){
-                bot.sendMessage(msg.chat.id, 'وای دده :((((((((');
-                bot.sendMessage(msg.chat.id, ' با حروف لاتین تایپ کنید.');
+                bot.sendMessage(msg.chat.id, 'وا? دده :((((((((');
+                bot.sendMessage(msg.chat.id, ' با حروف لات?ن تا?پ کن?د.');
 
             } else {
                 let wenn = JSON.parse(body)
                 if (wenn.tuc.length < 1) {
-                    bot.sendMessage(msg.chat.id, 'نمیدونم :((((((((');
-                    bot.sendMessage(msg.chat.id, ' با حروف لاتین تایپ کنید.');
+                    bot.sendMessage(msg.chat.id, 'نم?دونم :((((((((');
+                    bot.sendMessage(msg.chat.id, ' با حروف لات?ن تا?پ کن?د.');
 
                 } else {
 
